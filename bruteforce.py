@@ -9,7 +9,7 @@ count = int(input("Enter digit count:"))
 alphabet = list(string.ascii_uppercase)
 
 def options():
-        choice = input("Select 1 for numbers only \n Select 2 for numbers and letters")
+        choice = input("Select 1 for numbers only, select 2 for numbers and letters")
 
         if choice == "1":
                 return  [str(i).zfill(count) for i in range(10000)]
@@ -18,11 +18,6 @@ def options():
         else:
                 print("Invalid option")
                 return[]
-
-#alphabet = list(string.ascii_uppercase)
-
-#password_list = [str(i).zfill(count) for i in range(10000)]
-#password_list = [str(i).zfill(count) + letter for i in range(10000) for letter in alphabet]
 
 def brute_force(password_list):
         for password in password_list:
