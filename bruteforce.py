@@ -1,14 +1,17 @@
 import requests
+import string
 
 url = input("Enter URL:")
 
 username = input("Enter username:")
 
 #generate numeric passwords
-
 count = int(input("Enter digit count:"))
 
-password_list = [str(i).zfill(count) for i in range(10000)]
+alphabet = list(string.ascii_uppercase)
+
+#password_list = [str(i).zfill(count) for i in range(10000)]
+password_list = [str(i).zfill(count) + letter for i in range(10000) for letter in alphabet]
 
 def brute_force():
         for password in password_list:
